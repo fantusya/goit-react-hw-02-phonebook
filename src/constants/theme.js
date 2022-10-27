@@ -1,15 +1,14 @@
 export const theme = {
   colors: {
-    black: '#000',
     white: '#fff',
     red: '#B22222',
-    golden: '#FFD700',
-    blue: '#00008B',
     silver: '#C0C0C0',
     text: '#4682B4',
     accent: '#F0F8FF',
-    secondary: '#0000FF',
     border: '#add8e6',
+    tableHead: 'rgba(240, 248, 255, 0.3)',
+    tableBody: 'rgba(240, 248, 255, 0.2)',
+    transparent: 'transparent',
   },
   space: [0, 2, 4, 8, 16, 32, 64, 128, 256],
   fonts: {
@@ -42,5 +41,8 @@ export const theme = {
     none: '0',
     normal: '15px',
     round: '50%',
+  },
+  transition: {
+    main: '400ms ease',
   },
 };
