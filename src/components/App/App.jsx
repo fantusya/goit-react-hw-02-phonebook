@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import shortid from 'shortid';
 
-import { PageTitle } from './App.styles';
+import { PageTitle, ContactsTitle } from './App.styled';
 
 import ContactForm from '../ContactForm';
 import Filter from '../Filter';
@@ -60,23 +60,43 @@ class App extends Component {
     const visibleContacts = this.getVisibleContacts();
 
     return (
-      <Box pt={5} pl={5}>
+      <Box
+        pt={5}
+        pl={7}
+        display="flex"
+        flexDirection="column"
+        alignItems="flex-start"
+        justifyContent="space-around"
+        style={{
+          gap: '16px',
+        }}
+      >
+        <PageTitle>Phonebook</PageTitle>
         <Box
           display="inline-flex"
-          flexDirection="column"
-          alignItems="center"
-          justifyContent="center"
+          alignItems="flex-start"
+          justifyContent="space-around"
+          style={{
+            gap: '200px',
+          }}
         >
-          <PageTitle>Phonebook</PageTitle>
-          <ContactForm onSubmit={this.addContact} />
+          <Box
+            display="inline-flex"
+            flexDirection="column"
+            alignItems="center"
+            justifyContent="center"
+          >
+            <ContactForm onSubmit={this.addContact} />
+          </Box>
+          <Box>
+            <ContactsTitle>Contacts</ContactsTitle>
+            <Filter value={filter} onChange={this.changeFilter} />
+            <ContactList
+              contacts={visibleContacts}
+              onDeleteContact={this.onDeleteContact}
+            />
+          </Box>
         </Box>
-
-        <h2>Contacts</h2>
-        <Filter value={filter} onChange={this.changeFilter} />
-        <ContactList
-          contacts={visibleContacts}
-          onDeleteContact={this.onDeleteContact}
-        />
       </Box>
     );
   }

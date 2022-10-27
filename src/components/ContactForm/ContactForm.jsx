@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Formik } from 'formik';
+import { Formik, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import {
   Form,
@@ -8,7 +8,6 @@ import {
   Field,
   FormLabel,
   AddContactBtn,
-  ErrorMessage,
   ErrorMessageCustom,
 } from './ContactForm.styled';
 
