@@ -21,12 +21,11 @@ class App extends Component {
       number,
     };
 
-    const arrayOfNames = this.state.contacts.map(contact => contact.name);
-    if (
-      arrayOfNames.some(
-        nameFromArray => nameFromArray.toLowerCase() === name.toLowerCase()
-      )
-    ) {
+    const isNameExistInPhonebook = this.state.contacts.some(
+      contact => contact.name.toLowerCase() === name.toLowerCase()
+    );
+
+    if (isNameExistInPhonebook) {
       alert(`${name} is already in contacts`);
       return;
     }
